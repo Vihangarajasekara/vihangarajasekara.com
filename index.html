@@ -28,6 +28,8 @@
 <!-- Favicon (placeholder - replace with your own once you have one) -->
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%23faf9f5'/%3E%3Ctext x='50%25' y='50%25' dominant-baseline='central' text-anchor='middle' font-family='Georgia,serif' font-size='18' fill='%232b5d8a'%3E%E2%88%9E%3C/text%3E%3C/svg%3E" />
 
+<!-- Google Search Console verification -->
+<meta name="google-site-verification" content="jFirAlnSzphgd7baJVakDx3Hx-Ew-U0-D9UFh1_AH9Q" />
 
 <!-- Open Graph (LinkedIn, WhatsApp, Facebook, Slack) -->
 <meta property="og:type" content="website" />
@@ -49,6 +51,76 @@
 <!-- Theme color for mobile browsers -->
 <meta name="theme-color" content="#faf9f5" media="(prefers-color-scheme: light)" />
 <meta name="theme-color" content="#0e0e0c" media="(prefers-color-scheme: dark)" />
+
+<!-- Canonical URL (tells Google the primary address of this page) -->
+<link rel="canonical" href="https://vihangarajasekara.com/" />
+
+<!-- JSON-LD structured data: tells Google this is a Person, with profession and affiliations -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Vihanga Rajasekara",
+  "alternateName": "Luki",
+  "url": "https://vihangarajasekara.com",
+  "image": "https://vihangarajasekara.com/photo.jpg",
+  "jobTitle": "Logistics Associate · B.Sc. Digital Technology & Management Student",
+  "description": "B.Sc. Digital Technology & Management student at OTH Amberg-Weiden, focused on digital transformation in industrial environments. Bridging AutoStore shop floors, Power BI dashboards, and SAP data structures.",
+  "worksFor": {
+    "@type": "Organization",
+    "name": "SCA Logistik & Fulfillment GmbH",
+    "url": "https://www.sca-fulfillment.de/"
+  },
+  "alumniOf": [
+    {
+      "@type": "CollegeOrUniversity",
+      "name": "OTH Amberg-Weiden",
+      "url": "https://www.oth-aw.de/"
+    },
+    {
+      "@type": "CollegeOrUniversity",
+      "name": "University of Colombo",
+      "url": "https://cmb.ac.lk/"
+    },
+    {
+      "@type": "CollegeOrUniversity",
+      "name": "Haaga-Helia University of Applied Sciences",
+      "url": "https://www.haaga-helia.fi/en"
+    },
+    {
+      "@type": "CollegeOrUniversity",
+      "name": "Thomas More University of Applied Sciences",
+      "url": "https://www.thomasmore.be/en"
+    }
+  ],
+  "knowsLanguage": ["English", "German", "Sinhala"],
+  "nationality": {
+    "@type": "Country",
+    "name": "Sri Lanka"
+  },
+  "homeLocation": {
+    "@type": "Place",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Ingolstadt",
+      "addressRegion": "Bavaria",
+      "addressCountry": "Germany"
+    }
+  },
+  "sameAs": [
+    "https://www.linkedin.com/in/vihanga-rajasekara-4a9119198"
+  ],
+  "knowsAbout": [
+    "Digital Transformation",
+    "SAP ERP",
+    "AutoStore AS/RS",
+    "Power BI",
+    "Industrie 4.0",
+    "Warehouse Management Systems"
+  ]
+}
+</script>
+
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <!-- Fraunces (display serif) + Instrument Sans (warm body) + JetBrains Mono (labels) -->
@@ -774,11 +846,18 @@
     padding: 14px 20px;
     height: 72px;
     box-sizing: border-box;
+    text-decoration: none;
+    color: inherit;
+    cursor: pointer;
     transition: transform 0.4s ease, box-shadow 0.4s ease;
   }
   .aff-logo-card:hover {
     transform: translateY(-3px);
     box-shadow: 0 10px 24px -12px rgba(0,0,0,0.18);
+  }
+  .aff-logo-card:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 3px;
   }
   .aff-logo {
     height: 40px;
@@ -1047,36 +1126,36 @@
     <div class="aff-block reveal">
       <div class="aff-label">Education</div>
       <div class="aff-logos">
-        <div class="aff-logo-card">
+        <a class="aff-logo-card" href="https://www.oth-aw.de/" target="_blank" rel="noopener" aria-label="Visit OTH Amberg-Weiden website">
           <img class="aff-logo" src="logos/oth-aw.png" alt="OTH Amberg-Weiden" loading="lazy" />
-        </div>
-        <div class="aff-logo-card">
+        </a>
+        <a class="aff-logo-card" href="https://cmb.ac.lk/" target="_blank" rel="noopener" aria-label="Visit University of Colombo website">
           <img class="aff-logo" src="logos/colombo.png" alt="University of Colombo" loading="lazy" />
-        </div>
-        <div class="aff-logo-card">
+        </a>
+        <a class="aff-logo-card" href="https://imbs.lk/" target="_blank" rel="noopener" aria-label="Visit IMBS Green Campus website">
           <img class="aff-logo" src="logos/imbs.png" alt="IMBS Green Campus" loading="lazy" />
-        </div>
-        <div class="aff-logo-card">
+        </a>
+        <a class="aff-logo-card" href="https://www.abeuk.com/" target="_blank" rel="noopener" aria-label="Visit ABE UK website">
           <img class="aff-logo" src="logos/abe.png" alt="ABE UK - Association of Business Executives" loading="lazy" />
-        </div>
-        <div class="aff-logo-card">
+        </a>
+        <a class="aff-logo-card" href="https://www.haaga-helia.fi/en" target="_blank" rel="noopener" aria-label="Visit Haaga-Helia University website">
           <img class="aff-logo" src="logos/haaga.png" alt="Haaga-Helia University of Applied Sciences" loading="lazy" />
-        </div>
-        <div class="aff-logo-card">
+        </a>
+        <a class="aff-logo-card" href="https://www.thomasmore.be/en" target="_blank" rel="noopener" aria-label="Visit Thomas More University website">
           <img class="aff-logo" src="logos/thomas-more.png" alt="Thomas More University of Applied Sciences" loading="lazy" />
-        </div>
+        </a>
       </div>
     </div>
 
     <div class="aff-block reveal">
       <div class="aff-label">Industry</div>
       <div class="aff-logos">
-        <div class="aff-logo-card">
+        <a class="aff-logo-card" href="https://www.sca-fulfillment.de/" target="_blank" rel="noopener" aria-label="Visit SCA Fulfillment website">
           <img class="aff-logo" src="logos/sca.png" alt="SCA Logistik &amp; Fulfillment" loading="lazy" />
-        </div>
-        <div class="aff-logo-card">
+        </a>
+        <a class="aff-logo-card" href="https://www.singersl.com/" target="_blank" rel="noopener" aria-label="Visit Singer Sri Lanka website">
           <img class="aff-logo" src="logos/singer.png" alt="Singer Sri Lanka" loading="lazy" />
-        </div>
+        </a>
       </div>
     </div>
   </div>

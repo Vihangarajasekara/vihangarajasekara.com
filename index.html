@@ -226,11 +226,13 @@
   .hero-meta a:hover { border-color: var(--accent); }
 
   .hero-side {
-    border-left: 1px solid var(--line);
-    padding-left: 32px;
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    padding: 26px 28px;
+    background: color-mix(in oklab, var(--bg-soft) 60%, transparent);
   }
   @media (max-width: 880px) {
-    .hero-side { border-left: none; padding-left: 0; border-top: 1px solid var(--line); padding-top: 28px; }
+    .hero-side { padding: 24px; }
   }
   .hero-side .label {
     font-family: var(--mono);
@@ -381,13 +383,24 @@
   .stats-row {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    gap: 18px;
+    gap: 14px;
     margin-top: 44px;
     padding-top: 30px;
     border-top: 1px solid var(--line);
   }
   @media (max-width: 640px) {
-    .stats-row { grid-template-columns: repeat(2, 1fr); gap: 24px; }
+    .stats-row { grid-template-columns: repeat(2, 1fr); gap: 12px; }
+  }
+  .stat {
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    padding: 20px 18px;
+    background: color-mix(in oklab, var(--bg-soft) 50%, transparent);
+    transition: transform 0.4s ease, border-color 0.4s ease;
+  }
+  .stat:hover {
+    transform: translateY(-2px);
+    border-color: color-mix(in oklab, var(--accent) 35%, var(--line));
   }
   .stat .n {
     font-family: var(--serif);
@@ -740,37 +753,53 @@
     display: flex;
     flex-wrap: wrap;
     align-items: center;
-    gap: 48px 56px;
+    gap: 16px;
     padding: 8px 0;
   }
   @media (max-width: 768px) {
-    .aff-logos { gap: 32px 36px; }
+    .aff-logos { gap: 12px; }
   }
   @media (max-width: 480px) {
-    .aff-logos { gap: 24px 28px; justify-content: flex-start; }
+    .aff-logos { gap: 10px; justify-content: flex-start; }
+  }
+  /* Logo cards stay white in BOTH modes (since logos have white backgrounds).
+     Subtle border + soft shadow make them sit cleanly on dark mode background. */
+  .aff-logo-card {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #ffffff;
+    border: 1px solid var(--line);
+    border-radius: 10px;
+    padding: 14px 20px;
+    height: 72px;
+    box-sizing: border-box;
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+  }
+  .aff-logo-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 24px -12px rgba(0,0,0,0.18);
   }
   .aff-logo {
     height: 40px;
     width: auto;
     max-width: 180px;
     object-fit: contain;
-    opacity: 0.55;
-    filter: grayscale(100%);
-    transition: opacity 0.4s ease, filter 0.4s ease, transform 0.4s ease;
     display: block;
   }
-  .aff-logo:hover {
-    opacity: 1;
-    filter: grayscale(0%);
-    transform: translateY(-1px);
-  }
   @media (max-width: 480px) {
-    .aff-logo { height: 32px; max-width: 130px; }
+    .aff-logo-card { height: 60px; padding: 10px 14px; }
+    .aff-logo { height: 30px; max-width: 130px; }
   }
-  /* Dark mode adjustment - logos need to be lighter on dark bg */
+  /* Dark mode: keep cards white, lift shadow for visibility against dark bg */
   @media (prefers-color-scheme: dark) {
-    .aff-logo { filter: grayscale(100%) invert(0.9); opacity: 0.6; }
-    .aff-logo:hover { filter: grayscale(0%) invert(0); opacity: 1; }
+    .aff-logo-card {
+      border-color: rgba(255,255,255,0.08);
+      box-shadow: 0 2px 8px -4px rgba(0,0,0,0.4);
+    }
+    .aff-logo-card:hover {
+      box-shadow: 0 12px 28px -10px rgba(0,0,0,0.6);
+    }
   }
 
   /* === END Affiliations strip === */
@@ -894,7 +923,7 @@
         </div>
       </div>
 
-      <aside class="hero-side hero-stagger-side">
+      <aside class="hero-side hero-stagger-side spotlight">
         <div class="label">Currently</div>
         <div class="now-grid">
           <div class="now-item">
@@ -950,10 +979,10 @@
         </div>
 
         <div class="stats-row reveal">
-          <div class="stat"><div class="n">3.5</div><div class="l">Years in Germany</div></div>
-          <div class="stat"><div class="n">125</div><div class="l">ECTS Completed</div></div>
-          <div class="stat"><div class="n">3</div><div class="l">Erasmus+ Programmes</div></div>
-          <div class="stat"><div class="n">1</div><div class="l">Jury Award · Helsinki</div></div>
+          <div class="stat spotlight"><div class="n">3.5</div><div class="l">Years in Germany</div></div>
+          <div class="stat spotlight"><div class="n">125</div><div class="l">ECTS Completed</div></div>
+          <div class="stat spotlight"><div class="n">3</div><div class="l">Erasmus+ Programmes</div></div>
+          <div class="stat spotlight"><div class="n">1</div><div class="l">Jury Award · Helsinki</div></div>
         </div>
       </div>
     </div>
@@ -1018,20 +1047,36 @@
     <div class="aff-block reveal">
       <div class="aff-label">Education</div>
       <div class="aff-logos">
-        <img class="aff-logo" src="logos/oth-aw.png" alt="OTH Amberg-Weiden" loading="lazy" />
-        <img class="aff-logo" src="logos/colombo.png" alt="University of Colombo" loading="lazy" />
-        <img class="aff-logo" src="logos/imbs.png" alt="IMBS Green Campus" loading="lazy" />
-        <img class="aff-logo" src="logos/abe.png" alt="ABE UK - Association of Business Executives" loading="lazy" />
-        <img class="aff-logo" src="logos/haaga.png" alt="Haaga-Helia University of Applied Sciences" loading="lazy" />
-        <img class="aff-logo" src="logos/thomas-more.png" alt="Thomas More University of Applied Sciences" loading="lazy" />
+        <div class="aff-logo-card">
+          <img class="aff-logo" src="logos/oth-aw.png" alt="OTH Amberg-Weiden" loading="lazy" />
+        </div>
+        <div class="aff-logo-card">
+          <img class="aff-logo" src="logos/colombo.png" alt="University of Colombo" loading="lazy" />
+        </div>
+        <div class="aff-logo-card">
+          <img class="aff-logo" src="logos/imbs.png" alt="IMBS Green Campus" loading="lazy" />
+        </div>
+        <div class="aff-logo-card">
+          <img class="aff-logo" src="logos/abe.png" alt="ABE UK - Association of Business Executives" loading="lazy" />
+        </div>
+        <div class="aff-logo-card">
+          <img class="aff-logo" src="logos/haaga.png" alt="Haaga-Helia University of Applied Sciences" loading="lazy" />
+        </div>
+        <div class="aff-logo-card">
+          <img class="aff-logo" src="logos/thomas-more.png" alt="Thomas More University of Applied Sciences" loading="lazy" />
+        </div>
       </div>
     </div>
 
     <div class="aff-block reveal">
       <div class="aff-label">Industry</div>
       <div class="aff-logos">
-        <img class="aff-logo" src="logos/sca.png" alt="SCA Logistik &amp; Fulfillment" loading="lazy" />
-        <img class="aff-logo" src="logos/singer.png" alt="Singer Sri Lanka" loading="lazy" />
+        <div class="aff-logo-card">
+          <img class="aff-logo" src="logos/sca.png" alt="SCA Logistik &amp; Fulfillment" loading="lazy" />
+        </div>
+        <div class="aff-logo-card">
+          <img class="aff-logo" src="logos/singer.png" alt="Singer Sri Lanka" loading="lazy" />
+        </div>
       </div>
     </div>
   </div>
@@ -1235,7 +1280,6 @@
       <div class="foot-block reveal">
         <div class="label">Elsewhere</div>
         <a href="https://www.linkedin.com/in/vihanga-rajasekara-4a9119198" target="_blank" rel="noopener"><span class="arrow">→</span>LinkedIn</a>
-        <a href="https://vihangarajasekara.github.io/meripaivat-2026/" target="_blank" rel="noopener"><span class="arrow">→</span>Meripäivät 2026</a>
       </div>
     </div>
 

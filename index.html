@@ -3,14 +3,14 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Vihanga Rajasekara — Digital Transformation & Industrial Engineering</title>
-<meta name="description" content="Vihanga (Luki) Rajasekara — B.Sc. Digital Technology & Management student at OTH Amberg-Weiden, focused on digital transformation in industrial environments. Power BI, SAP, AutoStore, Industrie 4.0." />
+<title>Vihanga Rajasekara - Digital Transformation & Industrial Engineering</title>
+<meta name="description" content="Vihanga (Luki) Rajasekara - B.Sc. Digital Technology & Management student at OTH Amberg-Weiden, focused on digital transformation in industrial environments. Power BI, SAP, AutoStore, Industrie 4.0." />
 <meta name="author" content="Vihanga Rajasekara" />
 
 <!-- Open Graph / Facebook / LinkedIn / WhatsApp -->
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://vihangarajasekara.com/" />
-<meta property="og:title" content="Vihanga Rajasekara — Digital Transformation & Industrial Engineering" />
+<meta property="og:title" content="Vihanga Rajasekara - Digital Transformation & Industrial Engineering" />
 <meta property="og:description" content="B.Sc. Digital Technology & Management at OTH Amberg-Weiden. Bridging shop-floor AutoStore operations with Power BI, SAP, and Industrie 4.0. Open to Werkstudent roles in digital transformation." />
 <meta property="og:image" content="https://vihangarajasekara.com/photo.jpg" />
 <meta property="og:image:width" content="800" />
@@ -21,19 +21,19 @@
 <!-- Twitter / X -->
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:url" content="https://vihangarajasekara.com/" />
-<meta name="twitter:title" content="Vihanga Rajasekara — Digital Transformation & Industrial Engineering" />
+<meta name="twitter:title" content="Vihanga Rajasekara - Digital Transformation & Industrial Engineering" />
 <meta name="twitter:description" content="B.Sc. Digital Technology & Management at OTH Amberg-Weiden. Bridging shop-floor AutoStore operations with Power BI, SAP, and Industrie 4.0." />
 <meta name="twitter:image" content="https://vihangarajasekara.com/photo.jpg" />
 
-<!-- Favicon (placeholder — replace with your own once you have one) -->
+<!-- Favicon (placeholder - replace with your own once you have one) -->
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%23faf9f5'/%3E%3Ctext x='50%25' y='50%25' dominant-baseline='central' text-anchor='middle' font-family='Georgia,serif' font-size='18' fill='%232b5d8a'%3E%E2%88%9E%3C/text%3E%3C/svg%3E" />
 
 
 <!-- Open Graph (LinkedIn, WhatsApp, Facebook, Slack) -->
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://vihangarajasekara.com/" />
-<meta property="og:title" content="Vihanga Rajasekara — Digital Transformation & Industrial Engineering" />
-<meta property="og:description" content="B.Sc. Digital Technology & Management at OTH Amberg-Weiden. Bridging AutoStore shop floors, Power BI dashboards, and SAP data structures. Jury Award winner — Krea Spring School Helsinki 2026." />
+<meta property="og:title" content="Vihanga Rajasekara - Digital Transformation & Industrial Engineering" />
+<meta property="og:description" content="B.Sc. Digital Technology & Management at OTH Amberg-Weiden. Bridging AutoStore shop floors, Power BI dashboards, and SAP data structures. Jury Award winner - Krea Spring School Helsinki 2026." />
 <meta property="og:image" content="https://vihangarajasekara.com/og-preview.jpg" />
 <meta property="og:image:width" content="1200" />
 <meta property="og:image:height" content="630" />
@@ -42,8 +42,8 @@
 
 <!-- Twitter / X Card -->
 <meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:title" content="Vihanga Rajasekara — Digital Transformation & Industrial Engineering" />
-<meta name="twitter:description" content="B.Sc. Digital Technology & Management at OTH Amberg-Weiden. Jury Award — Krea Spring School Helsinki 2026." />
+<meta name="twitter:title" content="Vihanga Rajasekara - Digital Transformation & Industrial Engineering" />
+<meta name="twitter:description" content="B.Sc. Digital Technology & Management at OTH Amberg-Weiden. Jury Award - Krea Spring School Helsinki 2026." />
 <meta name="twitter:image" content="https://vihangarajasekara.com/og-preview.jpg" />
 
 <!-- Theme color for mobile browsers -->
@@ -303,7 +303,7 @@
     .about-layout { grid-template-columns: 1fr; gap: 36px; }
   }
 
-  /* Photo treatment — asymmetric, editorial */
+  /* Photo treatment - asymmetric, editorial */
   .photo-stack {
     position: relative;
     padding-top: 8px;
@@ -723,7 +723,57 @@
     letter-spacing: -0.04em;
   }
 
-  /* === ANIMATIONS — restrained, purposeful === */
+  /* === Affiliations strip === */
+  .aff-block { margin-bottom: 36px; }
+  .aff-block:last-child { margin-bottom: 0; }
+  .aff-label {
+    font-family: var(--mono);
+    font-size: 11px;
+    color: var(--muted);
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    margin-bottom: 22px;
+    padding-bottom: 14px;
+    border-bottom: 1px solid var(--line);
+  }
+  .aff-logos {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 48px 56px;
+    padding: 8px 0;
+  }
+  @media (max-width: 768px) {
+    .aff-logos { gap: 32px 36px; }
+  }
+  @media (max-width: 480px) {
+    .aff-logos { gap: 24px 28px; justify-content: flex-start; }
+  }
+  .aff-logo {
+    height: 40px;
+    width: auto;
+    max-width: 180px;
+    object-fit: contain;
+    opacity: 0.55;
+    filter: grayscale(100%);
+    transition: opacity 0.4s ease, filter 0.4s ease, transform 0.4s ease;
+    display: block;
+  }
+  .aff-logo:hover {
+    opacity: 1;
+    filter: grayscale(0%);
+    transform: translateY(-1px);
+  }
+  @media (max-width: 480px) {
+    .aff-logo { height: 32px; max-width: 130px; }
+  }
+  /* Dark mode adjustment - logos need to be lighter on dark bg */
+  @media (prefers-color-scheme: dark) {
+    .aff-logo { filter: grayscale(100%) invert(0.9); opacity: 0.6; }
+    .aff-logo:hover { filter: grayscale(0%) invert(0); opacity: 1; }
+  }
+
+  /* === END Affiliations strip === */
 
   /* Base reveal-on-scroll */
   .reveal {
@@ -816,6 +866,7 @@
     <div class="nav-links">
       <a href="#about">About</a>
       <a href="#experience">Experience</a>
+      <a href="#affiliations">Affiliations</a>
       <a href="#projects">Projects</a>
       <a href="#achievements">Achievements</a>
     </div>
@@ -832,7 +883,7 @@
           Rajasekara<em>.</em>
         </h1>
         <p class="hero-sub">
-          Bridging digital transformation and industrial environments — from AutoStore shop floors to Power&nbsp;BI dashboards, SAP MM data structures, and award-winning international product work.
+          Bridging digital transformation and industrial environments - from AutoStore shop floors to Power&nbsp;BI dashboards, SAP MM data structures, and award-winning international product work.
         </p>
         <div class="hero-meta">
           <span>B.Sc. Digital Technology &amp; Management</span>
@@ -888,13 +939,13 @@
             Originally from <span class="accent">Sri Lanka</span>, based in Germany since 2022. I split my week between operating an AutoStore robotic warehouse at SCA Logistik, building OEE dashboards and ETL pipelines at university, and chasing Werkstudent roles in digital transformation consulting.
           </p>
           <p>
-            B.Sc. wraps in August 2027 — a <span class="accent">Master's runs through 2029</span>. Staying in Germany, staying in this field.
+            B.Sc. wraps in August 2027 - a <span class="accent">Master's runs through 2029</span>. Staying in Germany, staying in this field.
           </p>
           <p>
-            What I'm most interested in: the seam between <span class="accent">operational technology and information systems</span> — where shop-floor data meets ERP, where messy reality meets clean schemas. I've spent enough time on the warehouse floor to know where the friction lives.
+            What I'm most interested in: the seam between <span class="accent">operational technology and information systems</span> - where shop-floor data meets ERP, where messy reality meets clean schemas. I've spent enough time on the warehouse floor to know where the friction lives.
           </p>
           <p>
-            Outside of work and study: a foundation in <span class="accent">martial arts and structured leadership</span> — trained in Taekwondo, served as Cadet Corporal in the Police Cadet Corps at Ananda College, where I led a squad of junior cadets. Both shaped how I approach long projects today. Still training, now bodyweight calisthenics at home. Off the mat: cinema, content creation, and building things.
+            Outside of work and study: a foundation in <span class="accent">martial arts and structured leadership</span> - trained in Taekwondo, served as Cadet Corporal in the Police Cadet Corps at Ananda College, where I led a squad of junior cadets. Both shaped how I approach long projects today. Still training, now bodyweight calisthenics at home. Off the mat: cinema, content creation, and building things.
           </p>
         </div>
 
@@ -918,7 +969,7 @@
 
     <div class="timeline">
       <div class="tl-item reveal">
-        <div class="tl-date">2022 — Present</div>
+        <div class="tl-date">2022 - Present</div>
         <div class="tl-content">
           <h3>Logistics Associate · AutoStore Operations</h3>
           <div class="org">SCA Logistik &amp; Fulfillment GmbH · Reichertshofen</div>
@@ -926,7 +977,7 @@
             Operating and monitoring an AutoStore robotic Automated Storage and Retrieval System (AS/RS); managing goods-to-person workflows at high-throughput induction and picking ports. Self-trained on AutoStore system logic and HMI within the first weeks; now handle independent troubleshooting of hardware and port-controller faults.
           </p>
           <p>
-            Daily work bridges OT and IT: thousands of mobile-scanner transactions flowing between Zebra hardware and the WMS, with constant identification and escalation of inventory discrepancies — practical exposure to the same problems SAP MM solves (over-delivery tolerance logic analogous to M7022, goods-receipt reconciliation).
+            Daily work bridges OT and IT: thousands of mobile-scanner transactions flowing between Zebra hardware and the WMS, with constant identification and escalation of inventory discrepancies - practical exposure to the same problems SAP MM solves (over-delivery tolerance logic analogous to M7022, goods-receipt reconciliation).
           </p>
           <div class="tl-tags">
             <span class="tl-tag">AutoStore AS/RS</span>
@@ -939,7 +990,7 @@
       </div>
 
       <div class="tl-item reveal">
-        <div class="tl-date">2019 — 2021</div>
+        <div class="tl-date">2019 - 2021</div>
         <div class="tl-content">
           <h3>Junior Executive · Administration</h3>
           <div class="org">Singer Sri Lanka PLC · Kadawatha</div>
@@ -957,16 +1008,45 @@
   </div>
 </section>
 
-<section id="education">
+<section id="affiliations">
   <div class="wrap">
     <div class="section-head reveal">
       <span class="num">03</span>
+      <h2>Affiliations<em>.</em></h2>
+    </div>
+
+    <div class="aff-block reveal">
+      <div class="aff-label">Education</div>
+      <div class="aff-logos">
+        <img class="aff-logo" src="logos/oth-aw.png" alt="OTH Amberg-Weiden" loading="lazy" />
+        <img class="aff-logo" src="logos/colombo.png" alt="University of Colombo" loading="lazy" />
+        <img class="aff-logo" src="logos/imbs.png" alt="IMBS Green Campus" loading="lazy" />
+        <img class="aff-logo" src="logos/abe.png" alt="ABE UK - Association of Business Executives" loading="lazy" />
+        <img class="aff-logo" src="logos/haaga.png" alt="Haaga-Helia University of Applied Sciences" loading="lazy" />
+        <img class="aff-logo" src="logos/thomas-more.png" alt="Thomas More University of Applied Sciences" loading="lazy" />
+      </div>
+    </div>
+
+    <div class="aff-block reveal">
+      <div class="aff-label">Industry</div>
+      <div class="aff-logos">
+        <img class="aff-logo" src="logos/sca.png" alt="SCA Logistik &amp; Fulfillment" loading="lazy" />
+        <img class="aff-logo" src="logos/singer.png" alt="Singer Sri Lanka" loading="lazy" />
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="education">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="num">04</span>
       <h2>Education<em>.</em></h2>
     </div>
 
     <div class="edu-grid">
       <div class="edu-card reveal spotlight">
-        <div class="year">2023 — 2027 (expected)</div>
+        <div class="year">2023 - 2027 (expected)</div>
         <h4>B.Sc. Digital Technology &amp; Management</h4>
         <div class="inst">OTH Amberg-Weiden, Germany</div>
         <div class="detail">
@@ -999,7 +1079,7 @@
 <section id="projects">
   <div class="wrap">
     <div class="section-head reveal">
-      <span class="num">04</span>
+      <span class="num">05</span>
       <h2>Selected <em>projects</em>.</h2>
     </div>
 
@@ -1018,10 +1098,10 @@
         </div>
         <div class="p-body">
           <p>
-            A multilingual web application built from scratch for Kotka Maritime Festival 2026 — the centrepiece of a scenario-storytelling project on sustainable tourism, developed with Visit Kotka-Hamina and Haaga-Helia University. Six languages with instant switching, WhatsApp-style chat narrative anchored by Aino (a fictional 10-year-old writing from Kotka in 2060), an interactive festival map, and a peer-to-peer rewards system tied to named local partners.
+            A multilingual web application built from scratch for Kotka Maritime Festival 2026 - the centrepiece of a scenario-storytelling project on sustainable tourism, developed with Visit Kotka-Hamina and Haaga-Helia University. Six languages with instant switching, WhatsApp-style chat narrative anchored by Aino (a fictional 10-year-old writing from Kotka in 2060), an interactive festival map, and a peer-to-peer rewards system tied to named local partners.
           </p>
           <p>
-            I led app concept and frontend, and ran the live demo in the final 10-minute jury pitch — switching languages in real time on a deployed URL. Our team won the <span style="color: var(--accent-warm); font-weight: 500;">Jury Award</span> on 16 May 2026.
+            I led app concept and frontend, and ran the live demo in the final 10-minute jury pitch - switching languages in real time on a deployed URL. Our team won the <span style="color: var(--accent-warm); font-weight: 500;">Jury Award</span> on 16 May 2026.
           </p>
           <a href="https://vihangarajasekara.github.io/meripaivat-2026/" class="p-link" target="_blank" rel="noopener">View the live app</a>
         </div>
@@ -1041,7 +1121,7 @@
             A simulation of how shop-floor scanner data could flow into an ERP system. Python and pandas process batch CSVs of warehouse scan events into a normalized SQL schema, with a middleware layer that validates goods receipts against purchase orders.
           </p>
           <p>
-            More of a learning exercise than a production system — a hands-on way to study IT/OT integration against the real friction I see every day at SCA.
+            More of a learning exercise than a production system - a hands-on way to study IT/OT integration against the real friction I see every day at SCA.
           </p>
         </div>
       </article>
@@ -1061,7 +1141,7 @@
             Power BI dashboard for real-time analysis of production KPIs in a simulated Smart Factory environment. Star-schema data model with ETL pipelines integrating heterogeneous production sources; fact tables (production events) separated from dimensions (time, machine, product).
           </p>
           <p>
-            Complex DAX logic for Availability, Performance, and Quality calculations. Interactive design with slicers, Pareto charts, and drill-down across 60 days of simulated data — surfacing downtime patterns and machine bottlenecks for maintenance prioritization.
+            Complex DAX logic for Availability, Performance, and Quality calculations. Interactive design with slicers, Pareto charts, and drill-down across 60 days of simulated data - surfacing downtime patterns and machine bottlenecks for maintenance prioritization.
           </p>
         </div>
       </article>
@@ -1077,7 +1157,7 @@
         </div>
         <div class="p-body">
           <p>
-            Mixed-methods research on practical implementation of AI-supported process optimization in SMEs — co-authoring a paper titled <em>"Analytics &amp; AI: A Feasible BI Framework for Data-Driven Process Optimization in SMEs."</em>
+            Mixed-methods research on practical implementation of AI-supported process optimization in SMEs - co-authoring a paper titled <em>"Analytics &amp; AI: A Feasible BI Framework for Data-Driven Process Optimization in SMEs."</em>
           </p>
           <p>
             Qualitative analysis of Industrie 4.0 implementations at Siemens and Bosch to identify success factors and adoption barriers; quantitative analysis of manufacturing process data using descriptive statistics on public Kaggle datasets.
@@ -1092,14 +1172,14 @@
 <section id="achievements">
   <div class="wrap">
     <div class="section-head reveal">
-      <span class="num">05</span>
+      <span class="num">06</span>
       <h2>International <em>programmes</em>.</h2>
     </div>
 
     <div class="achv-grid">
       <div class="achv reveal spotlight">
         <div class="when">May 2026 · Erasmus+ · 5 ECTS</div>
-        <h4>Krea Spring School — Inspirational Storytelling</h4>
+        <h4>Krea Spring School - Inspirational Storytelling</h4>
         <div class="loc">Haaga-Helia University · Helsinki, Finland</div>
         <p>
           Blended Intensive Programme on sustainable tourism for Visit Kotka-Hamina and the Kotka Maritime Festival. Team 1, multicultural cohort from Germany, Portugal, Belgium, Estonia and beyond. Won the Jury Award for our scenario-storytelling project.
@@ -1111,7 +1191,7 @@
         <h4>Making Killer Webshops</h4>
         <div class="loc">Thomas More University · Antwerp, Belgium</div>
         <p>
-          E-commerce BIP with six international partner universities — built a real WordPress webshop for Zelfbakker.be. Ran a WCAG 2.1 accessibility audit against the EU legal framework and produced UX optimization recommendations.
+          E-commerce BIP with six international partner universities - built a real WordPress webshop for Zelfbakker.be. Ran a WCAG 2.1 accessibility audit against the EU legal framework and produced UX optimization recommendations.
         </p>
       </div>
 
@@ -1142,7 +1222,7 @@
       <div class="foot-block reveal">
         <div class="label">Get in touch</div>
         <h3>Let's <em>talk</em>.</h3>
-        <p>Open to Werkstudent opportunities in digital transformation, SAP/ERP consulting, and Industrie 4.0 — based in Ingolstadt, mobile across Bavaria.</p>
+        <p>Open to Werkstudent opportunities in digital transformation, SAP/ERP consulting, and Industrie 4.0 - based in Ingolstadt, mobile across Bavaria.</p>
         <p style="margin-top: 14px;">German B1 certified · B2 working level · English C1 · Sinhala native.</p>
       </div>
 
